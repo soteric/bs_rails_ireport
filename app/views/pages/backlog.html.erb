@@ -1,0 +1,95 @@
+<div class="span12" style="margin-top: -20px;">
+        <ul class="pager">
+            <li><a id='sprint1' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Sprint 1')">SPRINT 1</a></li>
+            <li><a id='sprint2' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Sprint 2')">SPRINT 2</a></li>
+            <li><a id='sprint3' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Feature Freeze')">FEATURE FREEZE</a></li>
+        </ul>
+    </div>
+
+<div id="ichart" class="row span12 center-block" style='height: auto; min-height: 680px'>
+	
+</div>
+
+<script type="text/javascript">
+	$(function () { 
+	    $('#ichart').highcharts({
+	        chart: {
+	            type: 'column',
+                spacingTop: 20,
+                marginBottom: 70,
+                borderRadius: 0
+	        },
+	        credits: {
+                enabled: false
+            },
+	        title: {
+	            text: 'B1505 Talent V1 Backlog Status (Sprint 1)',
+	            style: {
+                    fontWeight: 'bold',
+                    fontSize: '24px',
+                    color: "darkgray"
+                }
+	        },
+	        xAxis: {
+	            categories: ['TGM', 'PMT', 'PMR', 'MTR', 'CAL', 'VRP', 'SCM', 'CMP', 'PE', 'TRVW', 'CDP']
+	        },
+	        yAxis: {
+	            min: 0,
+	            title: {
+	                text: '# of Backlog Item'
+	            },
+	            stackLabels: {
+	                enabled: true,
+	                style: {
+	                    fontWeight: 'bold',
+	                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+	                }
+	            }
+	        },
+	        legend: {
+                align: 'right',
+                floating: true,
+                borderRadius: 0,
+                borderWidth: 0
+            },
+	        tooltip: {
+                formatter: function() {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>' +
+                        'Total: ' + this.point.stackTotal + '<br/><br/>' + '<label style="color: blue">Click bar to view detail</label>';
+                }
+            },
+	        plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                        formatter: function() {
+                            if (this.y != 0) {
+                                return this.y;
+                            }
+                        }
+                    }
+                }
+            },
+	        series: [{
+	            name: 'Not Started',
+	            data: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+	            color: '#FF5B79'
+	        }, {
+	            name: 'Dev In-Progress',
+	            data: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+	            color: '#6C71FF'
+	        }, {
+	            name: 'QA In-Progress',
+	            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	            color: '#2531FF'
+	        }, {
+	            name: 'Completed',
+	            data: [8, 14, 0, 4, 9, 15, 6, 25, 10, 9, 12],
+	            color: '#008000'
+	        }]
+	    });
+	});
+</script>

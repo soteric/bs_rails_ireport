@@ -1,0 +1,97 @@
+$mydark: #101010;
+
+body {
+	padding-top: 80px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-style: bold;
+	background-color: #f0f0f0;
+}
+
+.navbar-default {
+	background-color: $mydark;
+	border-color: $mydark;
+}
+
+.navbar-right {
+	padding-right: 50px;
+}
+
+.navbar-brand {
+	padding-left: 50px;
+}
+
+/*ireport logo*/
+.navbar-default .navbar-header {
+	a {
+		color: white;
+	}
+	a:hover {
+		color: yellow;
+	}
+	a:focus {
+		color: white;
+	}
+}
+
+.navbar {
+	border-radius: 0px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.298039) 3px 3px 3px 0px;
+	box-shadow: rgba(0, 0, 0, 0.298039) 3px 3px 3px 0px;
+}
+
+.navbar-default .navbar-nav { 
+	li {
+		a {
+			color: white;
+		} 
+		a:hover {
+			background-color: white;
+			color: $mydark;
+		}
+		a:focus {
+			background-color: white;
+			color: $mydark;
+		}
+	}
+}
+.navbar-default .navbar-nav {
+	.active {
+		a { 
+			background-color: $mydark;
+			color: white;
+		}
+		a:hover { 
+			background-color: white;
+			color: $mydark;
+		}
+	}
+}
+
+
+.navbar-defaul .navbar-nav:focus {
+	background-color: white;
+	color: $mydark;
+}
+
+#ichart {
+	box-shadow: rgba(0, 0, 0, 0.4) 18px 18px 40px 0px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 18px 18px 40px 0px;
+	color: rgb(51, 51, 51);
+}
+
+.btn {
+	border-radius: 15px;
+}
+.well {
+  style: none;
+}
+
+.pager li>a, .pager li>span {
+        font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+        width: 230px;
+        margin: 5px;
+        border-color: rgba(94, 97, 99, 0.35);
+        border-radius: 20px;
+        background-color: white;
+        color: rgba(94, 97, 99, 0.9);
+}

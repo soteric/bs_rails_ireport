@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pages#backlog'
+
   get 'pages/home'
 
   get 'pages/backlog'

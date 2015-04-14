@@ -1,12 +1,12 @@
-<div class="span12" style="margin-top: -20px;">
+<!-- <div class="span12" style="margin-top: -20px;">
         <ul class="pager">
             <li><a id='sprint1' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Sprint 1')">SPRINT 1</a></li>
             <li><a id='sprint2' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Sprint 2')">SPRINT 2</a></li>
             <li><a id='sprint3' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Feature Freeze')">FEATURE FREEZE</a></li>
         </ul>
-    </div>
+    </div> -->
 
-<div id="ichart" class="row span12 center-block" style='height: auto; min-height: 680px'>
+<div id="ichart" class="row span12 center-block" style='height: auto; min-height: 800px'>
 	
 </div>
 
@@ -23,7 +23,7 @@
                 enabled: false
             },
 	        title: {
-	            text: 'B1505 Talent V1 Backlog Status (Sprint 1)',
+	            text: 'B1505 Talent Defect Status',
 	            style: {
                     fontWeight: 'bold',
                     fontSize: '24px',
@@ -36,7 +36,7 @@
 	        yAxis: {
 	            min: 0,
 	            title: {
-	                text: '# of Backlog Item'
+	                text: '# of Defect'
 	            },
 	            stackLabels: {
 	                enabled: true,
@@ -74,21 +74,17 @@
                 }
             },
 	        series: [{
-	            name: 'Not Started',
-	            data: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+	            name: 'Unresolved',
+	            data: <%= @defect_count_unresolved %>,
 	            color: '#FF5B79'
 	        }, {
-	            name: 'Dev In-Progress',
-	            data: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-	            color: '#6C71FF'
+	            name: 'In Testing',
+	            data: <%= @defect_count_in_testing %>,
+	            color: '#2531FF',
 	        }, {
-	            name: 'QA In-Progress',
-	            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-	            color: '#2531FF'
-	        }, {
-	            name: 'Completed',
-	            data: [8, 14, 0, 4, 9, 15, 6, 25, 10, 9, 12],
-	            color: '#008000'
+	            name: 'Closed',
+	            data: <%= @defect_count_closed %>,
+	            color: 'green'
 	        }]
 	    });
 	});

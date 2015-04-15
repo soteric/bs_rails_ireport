@@ -1,12 +1,14 @@
-<!-- <div class="span12" style="margin-top: -20px;">
+<!-- 
+	<div class="span12" style="margin-top: -20px;">
         <ul class="pager">
             <li><a id='sprint1' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Sprint 1')">SPRINT 1</a></li>
             <li><a id='sprint2' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Sprint 2')">SPRINT 2</a></li>
             <li><a id='sprint3' href="javascript:void(0)" onclick="$('#ichart').removeAttr('style').css({'min-height': 'auto', 'margin-bottom': '30px'});populateChart('Feature Freeze')">FEATURE FREEZE</a></li>
         </ul>
-    </div> -->
+    </div> 
+-->
 
-<div id="ichart" class="row span12 center-block" style='height: auto; min-height: 800px'>
+<div id="ichart" class="row span12 center-block" style='height: auto; min-height: 600px'>
 	
 </div>
 
@@ -75,15 +77,15 @@
             },
 	        series: [{
 	            name: 'Unresolved',
-	            data: <%= @defect_count_unresolved %>,
+	            data: <%= @total_list_unresolved %>,
 	            color: '#FF5B79'
 	        }, {
 	            name: 'In Testing',
-	            data: <%= @defect_count_in_testing %>,
+	            data: <%= @total_list_in_testing %>,
 	            color: '#2531FF',
 	        }, {
 	            name: 'Closed',
-	            data: <%= @defect_count_closed %>,
+	            data: <%= @total_list_closed %>,
 	            color: 'green'
 	        }]
 	    });
